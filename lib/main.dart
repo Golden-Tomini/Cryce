@@ -1,3 +1,4 @@
+import 'package:cryce/routes.dart';
 import 'package:flutter/material.dart';
 
 const appName = "Cryce";
@@ -15,18 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appName,
       theme: ThemeData(
+        fontFamily: 'Roboto',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.lightGreen,
-          title: const Text(appName),
-        ),
-        body: const Center(
-          child: Text(appName)
-        )
-      ),
+      home: const Routes(),
     );
   }
 }
+
+

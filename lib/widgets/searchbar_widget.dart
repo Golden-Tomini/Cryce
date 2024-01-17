@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SearchBarWidget extends StatefulWidget{
-  const SearchBarWidget({super.key});
+  final String textPlaceholder;
+  const SearchBarWidget({Key? key, required this.textPlaceholder}) : super(key: key);
 
   @override
   State<SearchBarWidget> createState() => MySearchBarWidgets();
@@ -18,7 +19,7 @@ class MySearchBarWidgets extends State<SearchBarWidget>{
           onTap: () {controller.openView();},
           onChanged: (_) {controller.openView();},
           leading: const Icon(Icons.search),
-          hintText: 'Cari makanan, artikel, komunitas',
+          hintText: widget.textPlaceholder,
           hintStyle: MaterialStateProperty.resolveWith((states) {return TextStyle(color: Color.fromARGB(96, 105, 105, 105));}),
           shadowColor: MaterialStateProperty.resolveWith((states) {return Colors.transparent;}),
         );

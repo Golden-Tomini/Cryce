@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                   top: -20,
                   left: 24,
                   right: 24,
-                  child: SearchBarWidget(),
+                  child: SearchBarWidget(textPlaceholder: 'Cari Makanan, Artikel, dan Komunitas'),
                 ),
               ],
             ),

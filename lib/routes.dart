@@ -1,6 +1,6 @@
 import 'package:cryce/screen/article_screen.dart';
 import 'package:cryce/screen/comunity_screen.dart';
-import 'package:cryce/screen/home_screen.dart';
+import 'package:cryce/screen/home/home_screen.dart';
 import 'package:cryce/screen/market_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +50,7 @@ class MyRoutes extends State<Routes>{
       ),
       body: SafeArea(
         child: <Widget>[
-          const HomeScreen(),
+          HomeScreen(),
           const MarketScreen(),
           const ArticleScreen(),
           const ComunityScreen()

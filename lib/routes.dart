@@ -48,12 +48,14 @@ class MyRoutes extends State<Routes>{
           ),
         ],
       ),
-      body: <Widget>[
-        const HomeScreen(),
-        const MarketScreen(),
-        const ArticleScreen(),
-        const ComunityScreen()
-      ][currentIndex],
+      body: SafeArea(
+        child: <Widget>[
+          const HomeScreen(),
+          const MarketScreen(),
+          const ArticleScreen(),
+          const ComunityScreen()
+        ][currentIndex],
+      ),
     );
   }
 }

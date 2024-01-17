@@ -129,7 +129,7 @@ class MarketScreen extends StatelessWidget{
             ),
           ),
           Container(
-            margin: const EdgeInsets.symmetric(vertical:24.0, horizontal: 24.0),
+            margin: const EdgeInsets.all(24),
             child: const SearchBarWidget(textPlaceholder: 'Cari makanan',),
           ),
           Container(

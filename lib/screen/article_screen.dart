@@ -31,7 +31,7 @@ class ArticleScreen extends StatelessWidget{
                 )
               ),
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 24.0),
+                margin: const EdgeInsets.symmetric(horizontal: 24.0,),
                 child: const SearchBarWidget(textPlaceholder: 'Cari artikel'),
               ),
               Container(

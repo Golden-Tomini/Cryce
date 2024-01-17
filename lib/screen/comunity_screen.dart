@@ -10,6 +10,7 @@ class ComunityScreen extends StatelessWidget{
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 margin: const EdgeInsets.all(24.0), 
@@ -17,7 +18,7 @@ class ComunityScreen extends StatelessWidget{
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Artikel',
+                      'Komunitas',
                       style: TextStyle(
                         fontSize: 22.0,
                         fontWeight: FontWeight.w500,
@@ -91,6 +92,17 @@ class ComunityScreen extends StatelessWidget{
                           ),
                         ),
                       ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
+                child: const Column(
+                  children: [
+                    Text(
+                      'Komunitas Terdekat',
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     )
                   ],
                 ),

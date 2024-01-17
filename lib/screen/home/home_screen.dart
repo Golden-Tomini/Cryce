@@ -15,92 +15,97 @@ class HomeScreen extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Container(
-            margin: const EdgeInsets.all(24.0),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  'Cryce',
-                  style: TextStyle(
-                    fontSize: 22.0,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.lightGreen
-                  )
-                ),
-                CircleAvatar(
-                  backgroundImage: AssetImage('images/kucing.png'),
-                )
-              ],
-            )
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 16.0),
-            child: Stack(
-              fit: StackFit.loose,
-              clipBehavior: Clip.none,
-              alignment: Alignment.topCenter,
-              children: [
-                 Image.asset(
+        body: SafeArea(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+                margin: const EdgeInsets.all(24.0),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('Cryce',
+                        style: TextStyle(
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.lightGreen)),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('images/kucing.png'),
+                    )
+                  ],
+                )),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Stack(
+                fit: StackFit.loose,
+                clipBehavior: Clip.none,
+                alignment: Alignment.topCenter,
+                children: [
+                  Image.asset(
                     'images/bannerhome.png',
                     fit: BoxFit.cover,
                     width: double.infinity,
-                ),
-                const Positioned(
-                  top: -20,
-                  left: 24,
-                  right: 24,
-                  child: SearchBarWidget(textPlaceholder: 'Cari Makanan, Artikel, dan Komunitas'),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0).copyWith(top: 24.0),
-            child: Column(children: [
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    "Artikel Populer",
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.w500
-                    )
                   ),
-                  Text(
-                    "lihat semua",
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      decoration: TextDecoration.underline,
-                    ),
-                  )
+                  const Positioned(
+                    top: -20,
+                    left: 24,
+                    right: 24,
+                    child: SearchBarWidget(
+                        textPlaceholder:
+                            'Cari Makanan, Artikel, dan Komunitas'),
+                  ),
                 ],
               ),
-              const SizedBox(height: 16.0),
-              SizedBox(
-                height: 210,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: articles.map((article) => GeneralCard(
-                    onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(article.title)));
-                    },
-                    imageUrl: article.imageUrl,
-                    title: article.title,
-                    description: article.description
-                  )).toList(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0)
+                  .copyWith(top: 24.0),
+              child: Column(children: [
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text("Artikel Populer",
+                        style: TextStyle(
+                            fontSize: 18.0, fontWeight: FontWeight.w500)),
+                    Text(
+                      "lihat semua",
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        decoration: TextDecoration.underline,
+                      ),
+                    )
+                  ],
                 ),
-              )
-            ]),
-          )
-        ],
-      )
-    );
+                const SizedBox(height: 16.0),
+                SizedBox(
+                  height: 210,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) => const SizedBox(
+                      width: 12.0,
+                    ),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: articles.length,
+                    itemBuilder: (context, i) {
+                      final article = articles[i];
+                      return GeneralCard(
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text(article.title)));
+                          },
+                          imageUrl: article.imageUrl,
+                          title: article.title,
+                          description: article.description);
+                    },
+                  ),
+                )
+              ]),
+            )
+          ],
+        ),
+      ),
+    ));
   }
 }

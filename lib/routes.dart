@@ -1,7 +1,7 @@
 import 'package:cryce/screen/article_screen.dart';
-import 'package:cryce/screen/comunity_screen.dart';
+import 'package:cryce/screen/comunity/comunity_screen.dart';
 import 'package:cryce/screen/home/home_screen.dart';
-import 'package:cryce/screen/market_screen.dart';
+import 'package:cryce/screen/market/market_screen.dart';
 import 'package:flutter/material.dart';
 
 class Routes extends StatefulWidget{
@@ -51,9 +51,9 @@ class MyRoutes extends State<Routes>{
       body: SafeArea(
         child: <Widget>[
           HomeScreen(),
-          const MarketScreen(),
+          MarketScreen(),
           const ArticleScreen(),
-          const ComunityScreen()
+          ComunityScreen()
         ][currentIndex],
       ),
     );

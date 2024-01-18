@@ -102,6 +102,14 @@ class HomeScreen extends StatelessWidget {
                   ),
                 )
               ]),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 24.0),
+              child: Image.asset(
+                'images/adshome.png',
+                fit: BoxFit.cover,
+                width: double.infinity,
+              ),
             )
           ],
         ),

@@ -1,4 +1,4 @@
-import 'package:cryce/screen/article_screen.dart';
+import 'package:cryce/screen/article/article_screen.dart';
 import 'package:cryce/screen/comunity/comunity_screen.dart';
 import 'package:cryce/screen/home/home_screen.dart';
 import 'package:cryce/screen/market/market_screen.dart';
@@ -28,18 +28,22 @@ class MyRoutes extends State<Routes>{
         selectedIndex: currentIndex,
         destinations: const <Widget>[
           NavigationDestination(
+            selectedIcon:  Icon(Icons.home, color: Colors.white),
             icon: Icon(Icons.home),
             label: 'Beranda',
           ),
           NavigationDestination(
-            icon: Icon(Icons.ads_click_rounded),
+            selectedIcon:  Icon(Icons.ads_click_rounded, color: Colors.white),
+            icon: Icon(Icons.ads_click_rounded,),
             label: 'Market',
           ),
           NavigationDestination(
+            selectedIcon:  Icon(Icons.newspaper_rounded, color: Colors.white),
             icon: Icon(Icons.newspaper_rounded),
             label: 'Artikel',
           ),
           NavigationDestination(
+            selectedIcon:  Icon(Icons.message_rounded, color: Colors.white),
             icon: Badge(
               label: Text('2'),
               child: Icon(Icons.message_rounded),
@@ -52,7 +56,7 @@ class MyRoutes extends State<Routes>{
         child: <Widget>[
           HomeScreen(),
           MarketScreen(),
-          const ArticleScreen(),
+          ArticleScreen(),
           ComunityScreen()
         ][currentIndex],
       ),

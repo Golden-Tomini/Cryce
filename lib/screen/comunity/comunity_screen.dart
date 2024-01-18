@@ -116,7 +116,7 @@ class ComunityScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16.0),
                   SizedBox(
-                    height: 210,
+                    height: 248,
                     child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -126,26 +126,19 @@ class ComunityScreen extends StatelessWidget {
                             final comunity = nearestComunity[index ~/ 2];
                             return Expanded(
                               child: GeneralCard(
-                                imageUrl: comunity.imageUrl,
-                                title: comunity.title,
-                                description: comunity.description,
-                                width: double.infinity,
-                                subtitleCard: Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.pin_drop_outlined,
-                                      size: 12.0,
-                                      opticalSize: 20,
-                                    ),
-                                    const SizedBox(width: 6.0),
-                                    Text(
+                                  imageUrl: comunity.imageUrl,
+                                  title: comunity.title,
+                                  description: comunity.description,
+                                  width: double.infinity,
+                                  subtitleCard: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 2.0),
+                                    child: Text(
                                       "${comunity.distance.toString()} Km",
                                       style: const TextStyle(
                                           fontSize: 10.0, color: Colors.grey),
                                     ),
-                                  ],
-                                ),
-                              ),
+                                  )),
                             );
                           }
                           return const SizedBox(width: 12);
@@ -156,7 +149,7 @@ class ComunityScreen extends StatelessWidget {
             ),
             Container(
               margin:
-                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

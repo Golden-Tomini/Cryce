@@ -1,4 +1,4 @@
-class Comunity {
+class Comunity{
   final String imageUrl;
   final String title;
   final String description;

@@ -6,6 +6,6 @@ class ComunityViewModel {
 
   ComunityViewModel({required Repository repository}) : _repository = repository;
 
-  List<Comunity> getNearestComunity() => _repository.getNearestComunity();
-  List<Comunity> getMostPopularComunity() => _repository.getMostPopularComunity();
+  List<Comunity> getNearestComunity() => _repository.getNearestComunities();
+  List<Comunity> getMostPopularComunity() => _repository.getMostPopularComunities();
 }

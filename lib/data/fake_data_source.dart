@@ -1,6 +1,9 @@
 import 'package:cryce/model/article.dart';
+import 'package:cryce/model/articlecategory.dart';
 import 'package:cryce/model/comunity.dart';
-import 'package:cryce/model/foodcategories.dart';
+import 'package:cryce/model/food.dart';
+import 'package:cryce/model/foodcategory.dart';
+import 'package:cryce/model/store.dart';
 
 class FakeDataSource {
   static List<Article> articles = [
@@ -25,7 +28,7 @@ class FakeDataSource {
             'Depresi adalah gangguan suasana hati yang ditandai dengan perasaan sedih yang berkepanjangan dan hilangnya minat pada aktivitas yang biasa dilakukan. Depresi dapat memengaruhi cara Anda berpikir, merasa, dan berperilaku. Depresi dapat terjadi pada siapa saja, pada usia berapa pun, dan pada saat keadaan apa pun. Namun, depresi tidak sama dengan kesedihan yang biasa Anda rasakan dari waktu ke waktu. Depresi adalah penyakit yang memengaruhi cara Anda berpikir, merasa, dan berperilaku. Depresi dapat menyebabkan berbagai masalah fisik dan emosional. Anda mungkin kesulitan melakukan aktivitas sehari-hari, dan mungkin merasa bahwa hidup tidak lagi bermakna.'),
   ];
 
-  static List<Comunity> comunity = [
+  static List<Comunity> comunities = [
     Comunity(
       imageUrl: 'https://picsum.photos/200/300',
       title: 'Food Waste dan Pemborosan Makanan',
@@ -59,30 +62,98 @@ class FakeDataSource {
     ),
   ];
 
-  static List<FoodCategories> foodCategories = [
-    FoodCategories(
+  static List<FoodCategory> foodCategories = [
+    FoodCategory(
       imageUrl: 'https://picsum.photos/200/300',
       title: 'Makanan Berat',
     ),
-    FoodCategories(
+    FoodCategory(
       imageUrl: 'https://picsum.photos/200/301',
       title: 'Roti & Kue',
     ),
-    FoodCategories(
+    FoodCategory(
       imageUrl: 'https://picsum.photos/200/302',
       title: 'Cemilan',
     ),
-    FoodCategories(
+    FoodCategory(
       imageUrl: 'https://picsum.photos/200/303',
       title: 'Minuman',
     ),
-    FoodCategories(
+    FoodCategory(
       imageUrl: 'https://picsum.photos/200/304',
       title: 'Buah & Sayur',
     ),
-    FoodCategories(
+    FoodCategory(
       imageUrl: 'https://picsum.photos/200/305',
       title: 'Bahan Makanan',
     ),
   ];
+
+  static List<Food> foods = [
+    Food(
+      imageUrl: 'https://picsum.photos/200/300',
+      title: 'Makanan Berat',
+      price: 15000,
+      timePosted: DateTime.now(),
+      distance: 1.2,
+    ),
+    Food(
+      imageUrl: 'https://picsum.photos/200/301',
+      title: 'Makanan sedang',
+      price: 15000,
+      timePosted: DateTime.now().subtract(const Duration(days: 4)),
+      distance: 0.2,
+    ),
+    Food(
+      imageUrl: 'https://picsum.photos/200/302',
+      title: 'Makanan ringan ',
+      price: 15000,
+      timePosted: DateTime.now().subtract(const Duration(days: 1)),
+      distance: 1,
+    ),
+    Food(
+      imageUrl: 'https://picsum.photos/200/303',
+      title: 'Makanan enteng',
+      price: 15000,
+      timePosted: DateTime.now().subtract(const Duration(days: 3)),
+      distance: 0.1,
+    ),
+  ];
+
+
+  static List<Store> stores = [
+    Store(
+      imageUrl: 'https://picsum.photos/200/300',
+      title: 'Toko naruto',
+      distance: 1.2,
+      storeCategory: 'makanan berat, minuman',
+    ),
+    Store(
+      imageUrl: 'https://picsum.photos/200/301',
+      title: 'Ichiraku ramen',
+      distance: 0.2,
+      storeCategory: 'makanan berat, minuman',
+    ),
+    Store(
+      imageUrl: 'https://picsum.photos/200/302',
+      title: 'Mawar sharon',
+      distance: 1,
+      storeCategory: 'makanan berat, minuman',
+    ),
+    Store(
+      imageUrl: 'https://picsum.photos/200/303',
+      title: 'Mak ude',
+      distance: 0.1,
+      storeCategory: 'makanan berat, minuman',
+    ),
+  ];
+
+  static List<ArticleCategory> articleCategories = [
+    ArticleCategory(title: 'Food wate'),
+    ArticleCategory(title: 'Sisa makanan'),
+    ArticleCategory(title: 'Miskin'),
+    ArticleCategory(title: 'Programmer'),
+  ];
+
+
 }

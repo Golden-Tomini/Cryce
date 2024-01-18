@@ -47,18 +47,18 @@ class GeneralCard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     )),
               ),
-              if(subtitleCard != null) Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: subtitleCard,
-              ),
+              if (subtitleCard != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: subtitleCard,
+                ),
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0)
                       .copyWith(bottom: 16.0),
                   child: Text(description,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                      style:
-                          const TextStyle(fontSize: 12.0, color: Colors.grey)))
+                      style: const TextStyle(fontSize: 12.0)))
             ],
           ),
         ),
